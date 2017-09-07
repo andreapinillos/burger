@@ -4,15 +4,10 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger.js');
 
-// add a '/' endpoint that redirects to the /index route
-router.get('/', function(req, res) {
-  res.redirect('/index');
-});
-
 // add a '/index/' endpoint that gets all the burgers
 // then renders the index file by passing in all the burgers
 // as an object for handlebars to use
-router.get('/index', function(req, res) {
+router.get('/', function(req, res) {
   burger.all(function(data) {
     var hbsObject = {burgers: data};
     console.log(hbsObject);
@@ -25,7 +20,7 @@ router.get('/index', function(req, res) {
 // redirects back to the /index route
 router.post('/burgers/create', function(req, res) {
   burger.create(['burger_name', 'devoured'], [req.body.name, false], function() {
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 
@@ -37,7 +32,7 @@ router.put('/burgers/update/:id', function(req, res) {
   console.log('condition', condition);
 
   burger.update({devoured: req.body.devoured}, condition, function() {
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 

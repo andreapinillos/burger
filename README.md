@@ -9,4 +9,4 @@ The user may enter any burger name to add it to the menu. This also adds the new
 
 ## Deployment
 
-The deployment of the burger eating application can be found [here](https://arcane-lowlands-43083.herokuapp.com/).
+The deployment of the burger eating application can be found [here](https://mighty-scrubland-75297.herokuapp.com/).
