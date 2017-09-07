@@ -11,7 +11,7 @@ function printQuestionMarks(num) {
 
   return arr.toString();
 }
-
+ 
 // Helper function for SQL syntax.
 function objToSql(ob) {
   var arr = [];
